@@ -1,14 +1,46 @@
 describe('Controller : CoursesCtrl', function(){
+  var ctrl, scope, $httpBackend;
   beforeEach(module('courseApp'));
-  var CoursesCtrl, scope;
-  beforeEach(inject(function($controller, $rootScope){
+
+  beforeEach(inject(function(_$httpBackend_, $controller, $rootScope) {
     scope = $rootScope.$new();
-    CoursesCtrl = $controller('CoursesCtrl', {
+    $httpBackend = _$httpBackend_;
+
+    $httpBackend.expectGET('jsondata/course.json').respond([
+      {"name":"C Language",
+        "teacher":"professor X",
+        "students": [{"name": "Zhang Song"},
+          {"name": "Hu Kai"}
+        ]
+      },
+      {"name":"Analysis of Unix System",
+        "teacher":"professor Y",
+        "students": [{"name": "Yao Yao"},
+          {"name": "Dai Junfeng"}
+        ]
+      },
+    ]);
+    ctrl = $controller('CoursesCtrl', {
       $scope: scope
     });
   }));
 
-  it('should attach a list of courses to the scope', function(){
-    expect(scope.courses.length).toBe(3 );
+  it('should create "courses" module with 2 courses fetched from xhr', function(){
+    expect(scope.courses).toBeUndefined();
+    $httpBackend.flush();
+    expect(scope.courses).toEqual([
+      {"name":"C Language",
+        "teacher":"professor X",
+        "students": [{"name": "Zhang Song"},
+          {"name": "Hu Kai"}
+        ]
+      },
+      {"name":"Analysis of Unix System",
+        "teacher":"professor Y",
+        "students": [{"name": "Yao Yao"},
+          {"name": "Dai Junfeng"}
+        ]
+      },
+    ]);
   });
 });
