@@ -1,20 +1,17 @@
 [
-  {"name":"C Language",
-    "teacher":"professor X",
-    "students": [{"name": "Zhang Song"},
-                  {"name": "Hu Kai"}
-                ]
+  {"id":"1",
+    "name":"线性代数",
+    "teacher_id":"10",
+    "students_id": "1"
   },
-  {"name":"Analysis of Unix System",
-    "teacher":"professor Y",
-    "students": [{"name": "Yao Yao"},
-      {"name": "Dai Junfeng"}
-    ]
+  {"id":"2",
+    "name":"Analysis of Unix System",
+    "teacher_id":"11",
+    "students_id": "2"
   },
-  {"name":"Structure and Interpretation of Computer Programs",
-    "teacher":"professor Z",
-    "students": [{"name": "Ma Qiang"},
-      {"name": "Wen Qi"}
-    ]
+  {"id":"3",
+    "name":"Structure and Interpretation of Computer Programs",
+    "teacher_id":"12",
+    "students_id": "3"
   }
 ]

@@ -7,17 +7,15 @@ describe('Controller : CoursesCtrl', function(){
     $httpBackend = _$httpBackend_;
 
     $httpBackend.expectGET('jsondata/course.json').respond([
-      {"name":"C Language",
-        "teacher":"professor X",
-        "students": [{"name": "Zhang Song"},
-          {"name": "Hu Kai"}
-        ]
+      {"id":"1",
+        "name":"线性代数",
+        "teacher_id":"10",
+        "students_id": "1"
       },
-      {"name":"Analysis of Unix System",
-        "teacher":"professor Y",
-        "students": [{"name": "Yao Yao"},
-          {"name": "Dai Junfeng"}
-        ]
+      {"id":"2",
+        "name":"Analysis of Unix System",
+        "teacher_id":"11",
+        "students_id": "2"
       },
     ]);
     ctrl = $controller('CoursesCtrl', {
@@ -29,17 +27,15 @@ describe('Controller : CoursesCtrl', function(){
     expect(scope.courses).toBeUndefined();
     $httpBackend.flush();
     expect(scope.courses).toEqual([
-      {"name":"C Language",
-        "teacher":"professor X",
-        "students": [{"name": "Zhang Song"},
-          {"name": "Hu Kai"}
-        ]
+      {"id":"1",
+        "name":"线性代数",
+        "teacher_id":"10",
+        "students_id": "1"
       },
-      {"name":"Analysis of Unix System",
-        "teacher":"professor Y",
-        "students": [{"name": "Yao Yao"},
-          {"name": "Dai Junfeng"}
-        ]
+      {"id":"2",
+        "name":"Analysis of Unix System",
+        "teacher_id":"11",
+        "students_id": "2"
       },
     ]);
   });
