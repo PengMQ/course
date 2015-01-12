@@ -8,28 +8,19 @@
  *
  * Main module of the application.
  */
-angular
-  .module('courseApp', [
-    'ngAnimate',
-    'ngAria',
-    'ngCookies',
-    'ngMessages',
-    'ngResource',
-    'ngRoute',
-    'ngSanitize',
-    'ngTouch'
-  ])
-  .config(function ($routeProvider) {
-    $routeProvider
-      .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
-      })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl'
-      })
-      .otherwise({
-        redirectTo: '/'
-      });
-  });
+var courseApp = angular.module('courseApp', ['ngRoute', 'courseControllers']);
+
+courseApp.config(['$routeProvider', function ($routeProvider) {
+  $routeProvider
+    .when('/courses', {
+      templateUrl: 'views/course-list.html',
+      controller: 'CourseListCtrl'
+    })
+    .when('/courses/:courseId', {
+      templateUrl: 'views/course-detail.html',
+      controller: 'CourseDetailCtrl'
+    })
+    .otherwise({
+      redirectTo: '/courses'
+    });
+}]);

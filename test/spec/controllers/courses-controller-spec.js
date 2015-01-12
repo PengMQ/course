@@ -1,4 +1,4 @@
-describe('Controller : CoursesCtrl', function(){
+describe('Controller : CourseListCtrl', function(){
   var ctrl, scope, $httpBackend;
   beforeEach(module('courseApp'));
 
@@ -7,18 +7,18 @@ describe('Controller : CoursesCtrl', function(){
     $httpBackend = _$httpBackend_;
 
     $httpBackend.expectGET('jsondata/course.json').respond([
-      {"id":"1",
+      {"courseId":"1",
         "name":"线性代数",
-        "teacher_id":"10",
-        "students_id": "1"
+        "teacherId":"10",
+        "studentsId": "1"
       },
-      {"id":"2",
+      {"courseId":"2",
         "name":"Analysis of Unix System",
-        "teacher_id":"11",
-        "students_id": "2"
+        "teacherId":"11",
+        "studentsId": "2"
       },
     ]);
-    ctrl = $controller('CoursesCtrl', {
+    ctrl = $controller('CourseListCtrl', {
       $scope: scope
     });
   }));
@@ -27,15 +27,15 @@ describe('Controller : CoursesCtrl', function(){
     expect(scope.courses).toBeUndefined();
     $httpBackend.flush();
     expect(scope.courses).toEqual([
-      {"id":"1",
+      {"courseId":"1",
         "name":"线性代数",
-        "teacher_id":"10",
-        "students_id": "1"
+        "teacherId":"10",
+        "studentsId": "1"
       },
-      {"id":"2",
+      {"courseId":"2",
         "name":"Analysis of Unix System",
-        "teacher_id":"11",
-        "students_id": "2"
+        "teacherId":"11",
+        "studentsId": "2"
       },
     ]);
   });

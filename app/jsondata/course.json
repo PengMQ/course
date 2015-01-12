@@ -1,17 +1,17 @@
 [
-  {"id":"1",
+  {"courseId":"1",
     "name":"线性代数",
-    "teacher_id":"10",
-    "students_id": "1"
+    "teacherId":"10",
+    "studentsId": "1"
   },
-  {"id":"2",
+  {"courseId":"2",
     "name":"Analysis of Unix System",
-    "teacher_id":"11",
-    "students_id": "2"
+    "teacherId":"11",
+    "studentsId": "2"
   },
-  {"id":"3",
+  {"courseId":"3",
     "name":"Structure and Interpretation of Computer Programs",
-    "teacher_id":"12",
-    "students_id": "3"
+    "teacherId":"12",
+    "studentsId": "3"
   }
 ]
