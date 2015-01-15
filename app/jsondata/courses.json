@@ -1,0 +1,20 @@
+[
+  {
+    "courseId": "1",
+    "name": "线性代数",
+    "teacherId": "11",
+    "studentsId": "1"
+  },
+  {
+    "courseId": "2",
+    "name": "Analysis of Unix System",
+    "teacherId": "12",
+    "studentsId": "2"
+  },
+  {
+    "courseId": "3",
+    "name": "Structure and Interpretation of Computer Programs",
+    "teacherId": "13",
+    "studentsId": "3"
+  }
+]

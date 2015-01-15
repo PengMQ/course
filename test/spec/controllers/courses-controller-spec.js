@@ -6,7 +6,7 @@ describe('Controller : CourseListCtrl', function(){
     scope = $rootScope.$new();
     $httpBackend = _$httpBackend_;
 
-    $httpBackend.expectGET('jsondata/course.json').respond([
+    $httpBackend.expectGET('jsondata/courses.json').respond([
       {"courseId":"1",
         "name":"线性代数",
         "teacherId":"10",
