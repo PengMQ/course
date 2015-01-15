@@ -13,6 +13,14 @@ courseControllers.controller('CourseDetailCtrl', ['$scope', '$routeParams', '$ht
     $http.get('jsondata/course-' + $routeParams.courseId + '.json').then(function(response){
       $scope.course = response.data;
     }).then(function(){
+      var teacherId = $scope.course[0].teacherId;
+      $http.get('jsondata/teacher-' + teacherId + '.json').then(function(response){
+        $scope.teacherName = response.data[0].name;
+      });
+      $http.get('jsondata/students-' + $routeParams.courseId + '.json').then(function(response){
+        $scope.students = response.data;
+        console.log($scope.students);
+      });
     });
   }]);
 

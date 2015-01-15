@@ -1,1 +1,14 @@
-<div>course details for {{course[0].name}}</div>
+<html>
+  <head></head>
+  <body>
+  <div>course details for {{course[0].name}}</div>
+  <div>The teacher is {{teacherName}}</div>
+  <div>All students are:</div>
+  <ul>
+    <li ng-repeat = "student in students">
+      {{student.name}}
+    </li>
+  </ul>
+
+  </body>
+</html>
