@@ -19,7 +19,6 @@ courseControllers.controller('CourseDetailCtrl', ['$scope', '$routeParams', '$ht
       });
       $http.get('jsondata/students-' + $routeParams.courseId + '.json').then(function(response){
         $scope.students = response.data;
-        console.log($scope.students);
       });
     });
   }]);
